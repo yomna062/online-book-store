@@ -53,8 +53,8 @@ const onSubmit=async(data)=>{
       
       
         
-        <Button variant='contained' color='error'>send</Button>
-        <Button variant='outlined' >Login</Button>
+        <Button variant='contained'type="submit" color='error'>send</Button>
+        <Button variant='outlined' onClick={()=>navigate('/')}  >Login</Button>
       </Stack>
    </Stack>
    </>

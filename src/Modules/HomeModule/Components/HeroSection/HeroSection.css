@@ -1,0 +1,88 @@
+/* HeroSection.css */
+
+/* Container adjustments */
+.swiper {
+  position: relative;
+}
+
+/* Base style for custom buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: 2px solid #ED553B;
+  color: #ED553B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #ED553B;
+  color: white;
+}
+
+.custom-prev {
+  left: 20px;
+}
+
+.custom-next {
+  right: 20px;
+}
+
+/* Hide default Swiper arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+/* Pagination (dots) */
+.swiper-pagination {
+  bottom: 30px !important;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  left: 80px !important;
+  right: auto !important;
+  width: auto !important;
+  text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .nav-button {
+    width: 35px;
+    height: 35px;
+  }
+  .swiper-pagination {
+    left: 50% !important;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #bdbdbd !important;
+  opacity: 1;
+  border-radius: 50%;
+  margin: 0 8px !important;
+  transition: all 0.3s ease;
+}
+
+/* Active bullet with outer circle */
+.swiper-pagination-bullet-active {
+  background-color: #ED553B !important;
+  outline: 2px solid #ED553B;
+  outline-offset: 6px;
+  transform: scale(1);
+}

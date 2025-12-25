@@ -11,6 +11,7 @@ import MasterLayout from './Modules/Shared/components/MasterLayout/MasterLayout'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProtectedRoute from './Modules/Shared/components/ProtectedRoute/ProtectedRoute';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
       path: '/',
       element: <AuthLayout />,
       children: [
-        { index: true, element: <Login /> },
+        { index: true, element: <Login/> },
         { path: 'register', element: <Register /> },
         { path: 'forget-pass', element: <ForgetPass /> },
         { path: 'reset-pass', element: <ResetPass /> }
@@ -27,9 +28,11 @@ function App() {
     },
     {
       path: '/home',
-      element: <MasterLayout />,
+    element: <ProtectedRoute><MasterLayout /></ProtectedRoute>,
+
       children: [
         { index: true, element: <Home /> },
+
         
       ]
     }
